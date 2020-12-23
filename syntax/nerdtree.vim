@@ -1,3 +1,8 @@
+" Highlights the background of NERDTree.
+if has("nvim")
+	setlocal winhighlight=Normal:NERDTreeNormal
+endif
+
 let s:tree_up_dir_line = '.. (up a dir)'
 syn match NERDTreeIgnore #\~#
 exec 'syn match NERDTreeIgnore #\['.g:NERDTreeGlyphReadOnly.'\]#'
@@ -59,6 +64,8 @@ syn match NERDTreeBookmarksLeader #^>#
 syn match NERDTreeBookmarksHeader #^>-\+Bookmarks-\+$# contains=NERDTreeBookmarksLeader
 syn match NERDTreeBookmarkName #^>.\{-} #he=e-1 contains=NERDTreeBookmarksLeader
 syn match NERDTreeBookmark #^>.*$# contains=NERDTreeBookmarksLeader,NERDTreeBookmarkName,NERDTreeBookmarksHeader
+
+hi def link NERDTreeNormal Normal
 
 hi def link NERDTreePart Special
 hi def link NERDTreePartFile Type
